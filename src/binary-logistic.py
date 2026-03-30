@@ -66,9 +66,13 @@ baseline = y.value_counts(normalize=True).max()
 print(f"Raw Accuracy: {acc:.2%}")
 print(f"Balanced Accuracy: {b_acc:.2%}")
 print(f"Zero-Rate Baseline: {baseline:.2%}")
+#practically as effective as guessing no effect, but this isn't a predictive model so who cares.
 
 # use a threshold reflecting your actual distribution (~9%)
 y_pred_adjusted = (train_probs > 0.09).astype(int)
 
 from sklearn.metrics import confusion_matrix
 print(confusion_matrix(y, y_pred_adjusted))
+
+rrr = np.exp(binary_model.params)
+print(rrr)

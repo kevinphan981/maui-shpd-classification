@@ -156,3 +156,9 @@ print(f"Model Lift: {lift:.2%}")
 from sklearn.metrics import balanced_accuracy_score
 b_acc = balanced_accuracy_score(y_actual, y_pred)
 print(f"Balanced Accuracy: {b_acc:.2%}")
+
+# Convert coefficients to Relative Risk Ratios, am I tripping balls and do these labels actually mean something
+rrr = np.exp(result_mn.params)
+print(rrr)
+
+## ehhh kind of
