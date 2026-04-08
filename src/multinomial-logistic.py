@@ -99,7 +99,19 @@ prob_table = pd.DataFrame(
     columns=clean_column_names
 )
 
-print(prob_table.head(n = 100))
+prob_table_reset = prob_table.reset_index().rename(columns={'index': 'category'})
+# print(prob_table.head(n = 100))
+
+from great_tables import GT
+table = GT(prob_table_reset, rowname_col="category")
+
+table = (
+    table.tab_header(title = "Probability Table of Different Categories")
+    .fmt_number(columns = ['no effect', 'effect with agreed commitments', 'effect with proposed commitments'], n_sigfig = 4)
+    .fmt_percent(columns = ['no effect', 'effect with agreed commitments', 'effect with proposed commitments'])
+)
+
+table.show()
 
 
 # gemini slop

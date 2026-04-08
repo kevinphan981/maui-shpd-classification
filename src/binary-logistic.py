@@ -51,6 +51,21 @@ prob_table = pd.DataFrame({
 
 print(prob_table.sort_values(by='Prob_of_Effect', ascending=False))
 
+# making the table
+from great_tables import GT
+table = GT(prob_table, rowname_col = 'Label')
+
+table = (
+    table.tab_header(title = "Probability of Having an Effect")
+    .fmt_number(columns = 'Prob_of_Effect', n_sigfig = 4)
+    .fmt_percent(columns = 'Prob_of_Effect')
+)
+
+table.show()
+
+
+
+
 '''
     Accuracy tests
 '''
