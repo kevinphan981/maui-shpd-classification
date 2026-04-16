@@ -2,6 +2,31 @@
 
 This is a small assignment where I classify the types of housing developments based on the Housing Maui dataset and do some basic data analytics on it. The same classification task will also be done on another separate piece of data, which is about SHPD (historical protected areas).
 
+```tree 
+.
+├── clean-data
+│   └── shpd-labelled.csv
+├── images
+│   ├── economic_impact_summary.png
+│   ├── project_impact_summary.pdf
+│   └── project_summary.png
+├── raw-data
+│   ├── labels.csv
+│   ├── my_copy_building-permits.xlsx
+│   ├── SHPD consolidated.xlsx
+│   └── shpd-plumb.csv
+├── README.md
+└── src
+    ├── analysis.ipynb
+    ├── binary-logistic.py
+    ├── data-gather
+    │   ├── shpd-21-24-determinations.pdf
+    │   └── shpd-pdf-plumber.py
+    ├── multinomial-logistic.py
+    ├── prototyping.ipynb
+    ├── supervised-shpd.py
+    └── unsurpervised-maui.ipynb
+```
 # Data
 We have two XLSX spreadsheets that we're going to work with. 
 The first is the Maui Housing data that I will use in order to find the most popular housing developments and possibly map those out?
